@@ -1,7 +1,7 @@
 addpath('functions');
 addpath('data');
 ap_radius    = 50;%50; % 50
-scaning_step = 41; % 51
+scaning_step = 21; % 51
 scan_type = 'grid';%'spiral';%'grid'; % 'spiral';
 sigma = 100; %30;
 %phases = importdata('model.mat'); small_phase = phases(129:256,129:256);

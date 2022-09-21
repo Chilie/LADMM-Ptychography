@@ -231,11 +231,11 @@ for itt = 1:iterations
         TTmp = fft2(Lsum)/sqrt(size(Probe,1)*size(Probe,2));
 %         TTmp_proj = MagProj(diffpats(:,:,it),TTmp);
         if itt < 115
-%             YK(:,:,it) = ifft2((diffpats(:,:,it)+adaptive_rho*abs(TTmp)).*sign(TTmp)/(1+adaptive_rho))*sqrt(size(Probe,1)*size(Probe,2));
-            YK_new(:,:,it) = ifft2((TTmp_proj+adaptive_rho*TTmp)/(1+adaptive_rho))*sqrt(size(Probe,1)*size(Probe,2));
+            YK_new(:,:,it) = ifft2((diffpats(:,:,it)+adaptive_rho*abs(TTmp)).*sign(TTmp)/(1+adaptive_rho))*sqrt(size(Probe,1)*size(Probe,2));
+%             YK_new(:,:,it) = ifft2((TTmp_proj+adaptive_rho*TTmp)/(1+adaptive_rho))*sqrt(size(Probe,1)*size(Probe,2));
         else
-%             YK(:,:,it) = ifft2((diffpats(:,:,it)+2.01*abs(TTmp)).*sign(TTmp)/(1+2.01))*sqrt(size(Probe,1)*size(Probe,2));
-            YK_new(:,:,it) = ifft2((TTmp_proj+10.01*TTmp)/(1+10.01))*sqrt(size(Probe,1)*size(Probe,2));
+            YK_new(:,:,it) = ifft2((diffpats(:,:,it)+2.01*abs(TTmp)).*sign(TTmp)/(1+2.01))*sqrt(size(Probe,1)*size(Probe,2));
+%             YK_new(:,:,it) = ifft2((TTmp_proj+10.01*TTmp)/(1+10.01))*sqrt(size(Probe,1)*size(Probe,2));
         end
 %         YK(:,:,it) = ifft2((diffpats(:,:,it)+ 0.5*abs(TTmp)).*sign(TTmp)/(1+0.5))*sqrt(size(Probe,1)*size(Probe,2));
         Lambda_new(:,:,it) = Lsum - YK_new(:,:,it);
